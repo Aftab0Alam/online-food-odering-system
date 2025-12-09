@@ -11,6 +11,13 @@ app.get("/", (req, res) => {
   res.send("Backend is running...");
 });
 
+//import routes
+const productRoutes = require("./routes/productRoutes");
+
+// use routes
+app.use("/products", productRoutes);
+
+
 app.listen(5000, () => {
   console.log("Server running on port 5000");
 });
